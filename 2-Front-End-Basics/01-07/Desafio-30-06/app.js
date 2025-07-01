@@ -26,13 +26,13 @@ function renderizarLista() {
     let exibicao = [...itens]
     const status = filtroStatus.value
 
-    if(status === 'pending') exibicao.filter(i => !i.purchased)
-
-    if(status === 'purchased') exibicao.filter(i => i.purchased)
+    if(status === 'pending') exibicao = exibicao.filter(i => !i.purchased)
+    
+    if(status === 'purchased') exibicao = exibicao.filter(i => i.purchased)
 
     if(ordenar.value === 'alphabetical') {
         exibicao.sort((a, b) => a.text.localeCompare(b.text))
-    } else if(ordenar.value === status) {
+    } else if(ordenar.value === 'status') {
         exibicao.sort((a, b) => a.purchased - b.purchased)
     }
 
@@ -40,12 +40,13 @@ function renderizarLista() {
 
     exibicao.forEach((item, index) => {
         const li = document.createElement('li')
-        li.textContent = item
+        li.textContent = item.text + ' - ' + (item.purchased ? 'Comprado' : 'Pendente')
 
         const btnToggle = document.createElement('button')
         btnToggle.textContent = item.purchased ? 'Marcar Pendente' : 'Marcar Comprado'
         btnToggle.addEventListener('click', () => {
             item.purchased = !item.purchased
+            //itens[index] = item
             salvarDados()
             renderizarLista()
         })
@@ -64,13 +65,16 @@ function renderizarLista() {
 
     contadorTotal.textContent = `Total: ${itens.length}`
     contadorPendentes.textContent = `Pendentes: ${itens.filter(i => !i.purchased).length}`
-    contadorPendentes.textContent = `Comprados: ${itens.filter(i => i.purchased).length}`
+    contadorComprados.textContent = `Comprados: ${itens.filter(i => i.purchased).length}`
 }
 
 formAdicionar.addEventListener('submit', (evento) => {
     evento.preventDefault()
-    const novoItem = inputItem.value.trim()
-    if(novoItem === '') return; 
+    const produto = inputItem.value.trim()
+    if(produto === '') return;
+    
+    const novoItem = new Item(produto, false)
+    
     itens.push(novoItem)
 
     salvarDados()
@@ -92,6 +96,21 @@ btnLimpar.addEventListener('click', () => {
         renderizarLista()
     }
 })
+
+ordenar.addEventListener('change', () => {
+    renderizarLista()
+})
+
+filtroStatus.addEventListener('change', () => {
+    renderizarLista()
+})
+
+class Item{
+            constructor(texto) {
+                this.text = texto
+                this.purchased = false
+            }
+        }
 
 
 // Funcionalidades:

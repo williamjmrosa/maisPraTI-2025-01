@@ -44,9 +44,15 @@ function CalcularTotal() {
         calcular.pop()
     }
 
-    valor = math.evaluate(calcular.join(''))
-    calcular = String(valor).split('')
-    resultado.value = calcular.join('')
+    try{
+        let valor = math.evaluate(calcular.join(''))
+
+        calcular = String(valor).split('')
+        resultado.value = calcular.join('')
+    } catch (error) {
+        alert('Expressão inválida')
+        limparTela()
+    }
 }
 
 function isOperador(char) {

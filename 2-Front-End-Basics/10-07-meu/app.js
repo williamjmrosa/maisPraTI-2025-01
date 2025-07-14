@@ -7,6 +7,28 @@ function inserir(num) {
     // if(calcular.length == 0 && num == '-') {
     //     calcular.push(num)
     // } else 
+    if (isOperador(num) && calcular.length == 0 && num != '-') {
+        return
+    } else if (isOperador(calcular[calcular.length - 1]) && isOperador(num) && calcular.length > 1) {
+        calcular.pop()
+    }else if(isOperador(num) && calcular.length == 1 && calcular[0] == '-') {
+        return
+    }
+
+    if (isPonto(num)) {
+        let ultimoPonto = 0
+        for (let i = 0; i < calcular.length; i++) {
+            if (isPonto(calcular[i])) {
+                ultimoPonto++
+            } else if (isOperador(calcular[i])) {
+                ultimoPonto--
+            }
+        }
+        if (ultimoPonto > 0) {
+            return
+        }
+    }
+
     calcular.push(num)
     resultado.value = calcular.join('')
 }
@@ -18,7 +40,7 @@ function deletar() {
 
 function CalcularTotal() {
 
-    if(isNaN(Number(calcular[calcular.length - 1]))){
+    if (isOperador(calcular[calcular.length - 1]) && isPonto(calcular[calcular.length - 2])) {
         calcular.pop()
     }
 
@@ -27,30 +49,13 @@ function CalcularTotal() {
     resultado.value = calcular.join('')
 }
 
-function operador(num){
-    if(calcular.length == 0 && num == '-') {
-            calcular.push(num)
-        }else if(calcular.length > 2 && isNaN(Number(calcular[calcular.length - 1]))){
-            calcular.pop()
-            calcular.push(num)
-        }else if(!isNaN(Number(calcular[calcular.length - 1]))){
-            let ultimoPonto = 0
-            for(let i = 0; i < calcular.length; i++){
-                if(calcular[i] == '.'){
-                    ultimoPonto++
-                }else if(isNaN(Number(calcular[i]))){
-                    ultimoPonto--
-                }
-            }
-            if(num == '.' && ultimoPonto == 0){
-                calcular.push(num)
-            }else if(num != '.'){
-                calcular.push(num)
-            }
-        }
+function isOperador(char) {
+    return ['+', '-', '/', '*'].includes(char)
 }
 
-
+function isPonto(char) {
+    return ['.'].includes(char)
+}
 
 function limparTela() {
     calcular = []

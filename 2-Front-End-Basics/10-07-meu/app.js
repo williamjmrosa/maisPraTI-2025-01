@@ -7,11 +7,9 @@ function inserir(num) {
     // if(calcular.length == 0 && num == '-') {
     //     calcular.push(num)
     // } else 
-    if (isOperador(num) && calcular.length == 0 && num != '-') {
-        return
-    } else if (isOperador(calcular[calcular.length - 1]) && isOperador(num) && calcular.length > 1) {
+    if (isOperador(calcular[calcular.length - 1]) && isOperador(num) && calcular.length > 1) {
         calcular.pop()
-    }else if(isOperador(num) && calcular.length == 1 && calcular[0] == '-') {
+    }else if(isOperador(num) && calcular.length == 0) {
         return
     }
 

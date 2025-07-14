@@ -18,7 +18,7 @@ function inserir(num) {
         for (let i = 0; i < calcular.length; i++) {
             if (isPonto(calcular[i])) {
                 ultimoPonto++
-            } else if (isOperador(calcular[i])) {
+            } else if (isOperador(calcular[i]) && i > 0) {
                 ultimoPonto--
             }
         }

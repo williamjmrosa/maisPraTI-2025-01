@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form name="formulario">
+        <div id="calculadora">
+            <div id="resultado">
+                <input type="text" name="txtResultado" disabled id="txtResultado">
+            </div>
+            <div><input type="button" value="C" onclick="limparTela()"></div>
+            <div><input type="button" value="Del" onclick="deletar()"></div>
+            <div><input type="button" value="+" onclick="inserir('+')"></div>
+            <div><input type="button" value="-" onclick="inserir('-')"></div>
+            <div><input type="button" value="1" onclick="inserir(1)"></div>
+            <div><input type="button" value="2" onclick="inserir(2)"></div>
+            <div><input type="button" value="3" onclick="inserir(3)"></div>
+            <div><input type="button" value="/" onclick="inserir('/')"></div>
+            <div><input type="button" value="4" onclick="inserir(4)"></div>
+            <div><input type="button" value="5" onclick="inserir(5)"></div>
+            <div><input type="button" value="6" onclick="inserir(6)"></div>
+            <div><input type="button" value="*" onclick="inserir('*')"></div>
+            <div><input type="button" value="7" onclick="inserir(7)"></div>
+            <div><input type="button" value="8" onclick="inserir(8)"></div>
+            <div><input type="button" value="9" onclick="inserir(9)"></div>
+            <div><input type="button" value="=" onclick="CalcularTotal()"></div>
+            <div><input type="button" value="." onclick="inserir('.')"></div>
+            <div><input type="button" value="0" onclick="inserir(0)"></div>
+        </div>
+        <!-- <table>
+            <tr>
+                
+                <td colspan="4" class="resutado"><input type="text" name="txtResultado" disabled id="txtResultado"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="C" onclick="limparTela()"></td>
+                <td><input type="button" value="Del" onclick="deletar()"></td>
+                <td><input type="button" value="+" onclick="inserir('+')"></td>
+                <td><input type="button" value="-" onclick="inserir('-')"></td>
+            </tr>
+                <tr>
+                <td><input type="button" value="1" onclick="inserir(1)"></td>
+                <td><input type="button" value="2" onclick="inserir(2)"></td>
+                <td><input type="button" value="3" onclick="inserir(3)"></td>
+                <td><input type="button" value="/" onclick="inserir('/')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="inserir(4)"></td>
+                <td><input type="button" value="5" onclick="inserir(5)"></td>
+                <td><input type="button" value="6" onclick="inserir(6)"></td>
+                <td><input type="button" value="*" onclick="inserir('*')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="inserir(7)"></td>
+                <td><input type="button" value="8" onclick="inserir(8)"></td>
+                <td><input type="button" value="9" onclick="inserir(9)"></td>
+                <td><input type="button" value="=" onclick="CalcularTotal()"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="." onclick="inserir('.')"></td>
+                <td><input type="button" value="0" onclick="inserir(0)"></td>
+            </tr>
+        </table> -->
+    </form>
+
+    <script src="app.js"></script>
+</body>
+</html>

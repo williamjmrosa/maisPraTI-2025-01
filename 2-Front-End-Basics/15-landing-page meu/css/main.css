@@ -92,6 +92,7 @@ header {
     width: 100%;
     height: 100%;
     color: #ffffff;
+    border-radius: 6px;
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.5);
     outline: none;
@@ -156,19 +157,20 @@ header {
     align-items: center;
 }
 
-.banner .left .features{
+.banner .left .features {
     max-width: 400px;
     margin-bottom: 100px;
 }
 
 .banner .left .features .rating {
+    color: #ffffff;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 25px
+    margin-bottom: 25px;
 }
 
-.banner .left .features .rating .score{
+.banner .left .features .rating .score {
     padding: 15px;
     font-size: 2rem;
     font-weight: 400;
@@ -176,23 +178,23 @@ header {
     background-color: #ffffff;
 }
 
-.banner .left .features .pricing{
+.banner .left .features .pricing {
     color: #ffffff;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.banner .left .features .pricing ion-icon{
+.banner .left .features .pricing ion-icon {
     padding: 15px;
     font-size: 3rem;
     font-weight: 400;
-    color: #fff;
+    color: #ffffff;
     background-color: rgba(255, 0, 0, 0.6);
     transition: 0.3s;
 }
 
-.banner .left .features .pricing ion-icon:hover{
+.banner .left .features .pricing ion-icon:hover {
     background-color: rgba(255, 0, 0, 0.9);
 }
 
@@ -204,8 +206,7 @@ header {
     align-items: start;
 }
 
-
-.banner .left .features .content h4{
+.banner .left .features .content h4 {
     color: #ffffff;
     font-size: 1.5rem;
     font-weight: 400;
@@ -213,22 +214,29 @@ header {
     text-transform: uppercase;
 }
 
-.banner .left .features .content span{
+.banner .left .features .content span {
     font-size: 0.7rem;
     text-transform: uppercase;
     font-weight: 400;
 }
 
-.banner .left .features .content .subtitle{
+.banner .left .features .content .subtitle {
     color: var(--primary);
 }
 
 .banner h1 {
-    color: #fff;
+    color: #ffffff;
     font-size: 5em;
     letter-spacing: 5px;
     line-height: 0.9;
     font-family: "Bauhaus 93";
+}
+
+.banner img {
+    max-width: 650px;
+    max-height: 650px;
+    width: 50%;
+    height: 50%;
 }
 
 .swiper .swiper-wrapper .swiper-slide .banner .right {
@@ -241,22 +249,16 @@ header {
     z-index: 100;
 }
 
-.banner .right iframe{
- max-width: 450px;
- max-height: 255px
-}
-
-.banner .right .description{
+.banner .right .description {
     padding: 30px 60px 0 0;
-    color: #fff;
+    color: #ffffff;
 }
 
-.banner .right .description li{
+.banner .right .description li {
     list-style: none;
-
 }
 
-.banner .right .description h4{
+.banner .right .description h4 {
     display: inline-block;
     font-size: 1.3rem;
     display: flex;
@@ -264,30 +266,32 @@ header {
 }
 
 .banner .right .trailer h2 {
-    color: #fff;
+    color: #ffffff;
 }
 
-.banner img {
-    max-width: 650px;
-    max-height: 650px;
-    width: 100%;
-    height: 100%;
-}
+.banner .right iframe {
+    max-width: 450px;
+    max-height: 255px;
+} 
 
-.swiper .swiper-button-prev{
+/* ... (seu CSS anterior) ... */
+
+.swiper .swiper-button-prev {
     position: absolute;
     left: 86%;
     top: 45%;
     width: 54px;
     height: 54px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    z-index: 101; /* Adicionado */
 }
 
-.swiper .swiper-button-next{
+.swiper .swiper-button-next {
     position: absolute;
-    left: 6%;
+    right: 6%;
     top: 45%;
     width: 54px;
     height: 54px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    z-index: 101; /* Adicionado */
 }

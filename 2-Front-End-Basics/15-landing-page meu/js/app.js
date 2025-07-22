@@ -1,5 +1,7 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
-    const swiper = new swiper('.swiper', {
+    const swiper = new Swiper('.swiper', {
         direction: 'horizontal',
         loop: true,
         navigation:{

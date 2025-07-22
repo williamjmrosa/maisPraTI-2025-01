@@ -1,22 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title>Nintendo | Gaming Website Landing Page</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
     <header>
-        <a class="logo" href="">
-            <img src="assets/images/nintendo-switch.png" alt="Nintendo Logo">
+        <a href="" class="logo">
+            <img src="assets/images/nintendo-switch.png" alt="Nintendo Switch Logo" height="240" width="240">
         </a>
+        <a href="#" class="menu"> <ion-icon name="grid-outline"></ion-icon></a>
         <ul class="nav">
-            <li><a href="">Switch News</a></li>
-            <li><a href="">Switch Online</a></li>
-            <li><a href="">Switch Classic</a></li>
+            <li><a href="https://www.nintendo.com/us/whatsnew/" target="_blank">Switch News</a></li>
+            <li><a href="https://www.nintendo.com/pt-br/switch/online/" target="_blank">Switch Online</a></li>
+            <li><a href="https://www.nintendo.com/us/switch/online/" target="_blank">Switch Classic</a></li>
         </ul>
-        <div class="search"><input type="text" id="gameInput" placeholder="Search"></div>
+
+        <div class="search">
+            <input type="text" id="gameInput" placeholder="Search">
+            <ion-icon name="search-outline" id="searchIcon"></ion-icon>
+        </div>
     </header>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" id="slide1">
+                <img src="assets/images/super_mario_odyssey_dinosaur_4k.jpeg" alt="Super Mario Odyssey Dinosaur">
+                <div class="backscene"></div>
+                <div class="banner">
+                    <div class="left">
+                        <div class="features">
+                            <div class="rating">
+                                <span class="score">9.2</span>
+                                <div class="content">
+                                    <span class="subtitle">
+                                        M E T A S C O R E
+                                    </span>
+                                    <h4>Ótimo</h4>
+                                    <span>Exlore lugares incríveis longe do Reino Cogumelo com o Mario e o novo aliado
+                                        Cappy em uma imensa aventura 3D ao redor do mundo.</span>
+                                </div>
+                            </div>
+                            <div class="pricing"><a href="" class="button">
+                                    <ion-icon name="add-circle-outline"></ion-icon>
+                                </a>
+
+                                <div class="content"><span class="subtitle">Super Mario Odyssey</span>
+                                    <h4>Compre Agora</h4>
+                                    <span>Plataforma, Aventura, Ação</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h1>Mario</h1>
+                    </div>
+                    <img src="assets/images/mario.png" alt="Que Mario?">
+                    <div class="right">
+                        <ul class="description">
+                            <li>
+                                <h4>
+                                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                                    Data de Lançamento
+                                </h4>
+                                <p>10 de Outubro de 2015</p>
+                        </li>
+                        <li>
+                            <h4>
+                                <ion-icon name="checkmark-circle-outline"></ion-icon>
+                                Modos Compatíveis
+                            </h4>
+                            <p>Modo Tv, Modo semiportátil, Modo Portatil</p>
+                        </li>
+                        </ul>
+                        <div class="trailer"><iframe src="https://www.youtube.com/embed/5kcdRBHM7kM" frameborder="0" width="1280" height="720" title="Super Mario Odyssey - Nintendo" allowfullscreen"></iframe></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div>
+
+    <script scr="js/app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>

@@ -6,6 +6,6 @@ import ClassComponent from './components/ClassComponent.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ClassComponent />
+    <Greeting name='Jaques'/>
   </StrictMode>,
 )

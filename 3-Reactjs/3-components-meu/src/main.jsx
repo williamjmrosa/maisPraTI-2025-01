@@ -8,6 +8,6 @@ import ClassComponent from './components/ClassComponent.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <LifeCycleClassComponent />
+    <LifeCycleFunctionalComponent />
   </StrictMode>,
 )

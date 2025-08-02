@@ -1,4 +1,4 @@
-import { userState , useEffct } from "react";
+import { useState , useEffect } from "react";
 
 function LifeCycleFunctionalComponent() {
     const [count, setCount] = useState(0)
@@ -6,12 +6,12 @@ function LifeCycleFunctionalComponent() {
     useEffect(() => {
         console.log("Componente montado")
 
-        return () => {
+        return() => {
             console.log("Componente será desmontado")
         }
     }, [])
 
-    useEffct(() => {
+    useEffect(() => {
         console.log("Componente Atualizado!")
     }, [count])
 
@@ -22,7 +22,7 @@ function LifeCycleFunctionalComponent() {
     return (
         <div>
             <p>Contagem: {count}</p>
-            <button onClick={this.increment}>Incrementar + 1</button>
+            <button onClick={increment}>Incrementar + 1</button>
         </div>
     )
 }

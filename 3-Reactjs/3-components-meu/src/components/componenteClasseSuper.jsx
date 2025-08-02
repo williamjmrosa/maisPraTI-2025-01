@@ -18,3 +18,5 @@ class ComponenteClasseSuper extends Component {
 function App(){
     return <ComponenteClasseSuper nome="William" />
 }
+
+

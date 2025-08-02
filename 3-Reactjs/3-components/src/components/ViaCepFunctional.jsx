@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-function ViaCepFunctional() {
+function ViaCepFunctional(cep) {
+    const [cep, setCep] = useState(cep)
     const [endereco, setEndereco] = useState(null)
     const [carregando, setCarregando] = useState(false)
     const [erro, setErro] = useState(null)

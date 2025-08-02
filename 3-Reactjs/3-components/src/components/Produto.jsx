@@ -1,24 +1,23 @@
 function Produto(props) {
     return (
-        <div className="produto"> 
-            <h2>{props.nome}</h2>
-            <p>{props.preco}</p>
-            <p>{props.descricao}</p>
-        </div>
-    )
-}
-
-// Criar um componente que exibe as informações de um produto. O componente pai (App) vai passar os dados do produto (nome, preço, descrição) como props para o componente filho (Produto), e o componente filho vai exibir essas informações.
-
-
-function Aplicativo(){
-    const produto = {nome: 'Notebook', preco: 'R$ 2.500', descricao: 'Notebook Dell'}
-
-    return (
         <div>
-            <Produto nome={produto.nome} preco={produto.preco} descricao={produto.descricao} />
+            <h1>{props.name}</h1>
+            <p>{props.price}</p>    
+            <p>{props.description}</p>    
         </div>
     )
 }
 
-export default Aplicativo
+function App() {
+    const product = {
+        name: "Avell XLR8",
+        price: "+ de 7000",
+        description: "30 minutos e acabou o pagode"
+    }
+
+    return(
+        <Produto name={product.name} price={product.price} description={product.description} />
+    )
+}
+
+export default App

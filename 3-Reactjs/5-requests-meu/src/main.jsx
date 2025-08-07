@@ -4,6 +4,6 @@ import { createRoot } from 'react-dom/client'
 import FetchUser from './components/FetchUser'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <FetchUser />
+    <FetchUser usuario={"Joao"} email={"j@j.com"}/>
   </StrictMode>,
 )

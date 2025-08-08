@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #6548da;
+}
+
+img{
+    max-width: 100px;
+    width: 100%;
+}
+
+#resultado{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #4fa8f3 solid 1px;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    width: 30%;
+}
+
+.paginacao{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.paginacao button{
+    cursor: pointer;
+    border: black solid 1px;
+    border-radius: 3.5rem;
+    padding: 0.5rem;
+    background-color: transparent;
+}
+
+.paginacao button:hover{
+    background-color: #4fa8f3;
+}
+
+.paginacao .selecionado{
+    background-color: #4fa8f3;
+}
+
+.paginacao button:disabled{
+    background-color: grey;
+    color: black;
+    cursor: not-allowed;
+}
+
+form input{
+    padding: 0.5rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    border: solid 2px #000;
+    border-right: none;
+}
+
+form input:focus{
+    outline: none;
+    font-weight: bold;
+}
+
+form button{
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    border: 2px solid #000;
+    border-left: none;
+    
+}
+
+form button:hover{
+    background-color: #4fa8f3;
+}
+
+#detalhes{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+
+}
+
+#detalhes .detalhes{
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background-color: #4fa8f3;
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+}
+
+#detalhes.mostrar{
+    display: flex;
+}
+
+.cabecalho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-bottom: 1rem;
+    flex-basis: 100%;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.info h2{
+    display: inline-block;
+    width: 100%;
+}
+
+.detalhes > img{
+    max-width: 200px;
+    width: 35%;
+    border-radius: 1rem;
+}
+
+.filme img{
+    max-width: 200px;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.filme{
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    gap: 1rem;
+}
+
+.info p{
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: justify;
+    margin: 1rem;
+}
+
+.elenco{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    text-align: center  ;
+}
+
+.cabecalho button{
+    cursor: pointer;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.cabecalho button:hover{
+    color: red;
+}
+
+.card button{
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 1rem;
+    font-weight: bold;
+    background-color: transparent;
+}

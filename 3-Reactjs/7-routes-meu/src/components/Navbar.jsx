@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom";
 
 const linkStyle = ({ isActive }) => ({
     marginRight: 8,
-    textDecoration: none,
-    padding: "6 10",
+    textDecoration: "none",
+    padding: "6px 10px",
     borderRadius: 6,
     border: "1px solid #ddd",
     backgroundColor: isActive ? "#111" : "#fff",

@@ -17,7 +17,7 @@ function App() {
             <Route path="sobre" element={<Sobre />} />
             <Route path="posts/:id" element={<Post />} />
             <Route path="*" element={<NotFound />} />
-        </Route> 
+          </Route> 
         </Routes>  
       </BrowserRouter>   
     </>

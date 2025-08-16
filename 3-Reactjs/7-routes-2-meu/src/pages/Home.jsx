@@ -1,7 +1,7 @@
-export default function Home(){
-    return(
-        <section>
-            <h1>Home</h1>
-        </section>
+export default function Home() {
+    return (
+        <div>
+            <h1>Página Inicial</h1>
+        </div>
     )
 }

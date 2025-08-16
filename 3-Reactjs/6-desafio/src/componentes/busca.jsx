@@ -279,7 +279,8 @@ function BuscarFilmes() {
                                         return f.id !== filme.id
                                     }))
                                 }else{
-                                    setResultado(resultado)
+                                    const novoReultado = resultado
+                                    setResultado(novoReultado)
                                 }
                             }
                                 

@@ -12,8 +12,6 @@ export function Themed({children}){
     return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }
 
-export function Button({variant='solid', children}) {
-    return (
-        <Btn variant={variant}>{children}</Btn>
-    )
+export function ButtonStyled({variant='solid', children}) {
+    return <Btn $variant={variant}>{children}</Btn>
 }

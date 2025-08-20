@@ -11,14 +11,14 @@ describe("App", () => {
         render(<App />)
 
         const countElement = screen.getByTestId('count');
-        const buttonElement = screen.getByText('Incrementar')
+        const buttonElement = screen.getByTestId('Increment')
 
         fireEvent.click(buttonElement);
 
-        expect(countElement).toHaveTextContent('1');
+        expect(countElement.textContent).toBe('1');
 
         fireEvent.click(buttonElement);
 
-        expect(countElement).toHaveTextContent('2');
+        expect(countElement.textContent).toBe('2');
     })
 })

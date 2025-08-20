@@ -10,7 +10,7 @@ describe("CounterJSX", () => {
 
         const countElement = screen.getByTestId('count');
 
-        expect(countElement).toHaveTextContent('0');
+        expect(countElement.textContent).toBe('0');
     })
 
     it('Deve incrementar um contador quando o botão for clicado', () => {
@@ -21,10 +21,10 @@ describe("CounterJSX", () => {
 
         fireEvent.click(buttonElement);
 
-        expect(countElement).toHaveTextContent('1');
+        expect(countElement.textContent).toBe('1');
 
         fireEvent.click(buttonElement);
 
-        expect(countElement).toHaveTextContent('2');
+        expect(countElement.textContent).toBe('2');
     })
 })

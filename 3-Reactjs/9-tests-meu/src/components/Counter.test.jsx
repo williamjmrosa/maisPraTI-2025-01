@@ -6,11 +6,11 @@ describe('Counter', () => {
     it('Deve incrementar um contador quando o botão for clicado', () => {
         render(<Counter />);
 
-        const countElement = screen.getById('count');
-        const buttonElement = screen.getByTestId('increment')
+        const countElement = screen.getByTestId('count');
+        const buttonElement = screen.getByTestId('Increment')
 
         fireEvent.click(buttonElement);
 
-        expect(countElement).toHaveTextContent('1');
+        expect(countElement.textContent).toBe('1');
     })
 })

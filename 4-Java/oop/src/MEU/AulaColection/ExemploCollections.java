@@ -1,3 +1,5 @@
+package MEU.AulaColection;
+
 import java.util.*;
 
 public class ExemploCollections {

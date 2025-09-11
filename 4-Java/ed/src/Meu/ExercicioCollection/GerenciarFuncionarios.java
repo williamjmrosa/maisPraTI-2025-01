@@ -31,7 +31,7 @@ public class GerenciarFuncionarios {
         Funcionario funcionario3 = new Funcionario("João", 8000, "Coordenador", 35);
         Funcionario funcionario4 = new Funcionario("Maria", 6000, "Contador", 40);
         Funcionario funcionario5 = new Funcionario("Pedro", 7000, "Contador", 45);
-        Funcionario funcionario6 = new Funcionario("Ana", 2500, "Limpeza", 25);
+        Funcionario funcionario6 = new Funcionario("Clara", 2500, "Limpeza", 25);
         Funcionario funcionario7 = new Funcionario("Carlos", 3000, "Atendente", 45);
         Funcionario funcionario8 = new Funcionario("Juliana", 3000, "Caixa", 40);
         Funcionario funcionario9 = new Funcionario("Pedro", 3000, "Caixa", 35);
@@ -63,15 +63,12 @@ public class GerenciarFuncionarios {
 
         System.out.println("Quantidade de Funcionários com salário superior a R$ 4.000,00: " + quantidadeFuncionariosSalarioMaior4000);
 
-        List<String> nomesFuncionarios = funcionarios.stream().map(Funcionario::getNome).collect(Collectors.toList());
+        List<String> nomesFuncionarios = funcionarios.stream().map(Funcionario::getNome).toList();
 
         System.out.println("Nomes dos funcionarios:");
         nomesFuncionarios.forEach(System.out::println);
 
-
-        //funcionarios.stream().map(Funcionario::getNome).forEach(System.out::println);
-
-
+        System.out.println("Original");
     }
 
 }

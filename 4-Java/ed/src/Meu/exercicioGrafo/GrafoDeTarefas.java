@@ -1,9 +1,6 @@
 package Meu.exercicioGrafo;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class GrafoDeTarefas {
 
@@ -21,12 +18,44 @@ public class GrafoDeTarefas {
         this.tarefas.remove(tarefa.getNome());
     }
 
-    public int calcularDuracaoTotal(Tarefa tarefa) {
-        return tarefa.getDuracao() + tarefa.getDependencias().stream().mapToInt(this::calcularDuracaoTotal).sum();
+    public int calcularDuracaoTotal(String nome) throws TarefaNaoEncontradaException, DependenciaCircularExeption {
+        Tarefa tarefa = this.tarefas.get(nome);
+        if(tarefa == null){
+            throw new TarefaNaoEncontradaException("Tarefa não encontrada: " + nome);
+        }
+
+        Set<Tarefa> visitados = new HashSet<>();
+        return calcularDuracaoTotalRecursiva(tarefa, visitados);
     }
 
-    public List<Tarefa> getTarefas() {
-        return new ArrayList<>(this.tarefas.values());
+    private int calcularDuracaoTotalRecursiva(Tarefa tarefa, Set<Tarefa> visitadas) {
+        if(visitadas.contains(tarefa)) {
+            throw new DependenciaCircularExeption("Dependência circular: " + tarefa.getNome());
+        }
+
+        visitadas.add(tarefa);
+
+        int duracaoTotal = tarefa.getDuracao();
+
+        for(Tarefa dependencia : tarefa.getDependencias()) {
+            duracaoTotal += calcularDuracaoTotalRecursiva(dependencia, visitadas);
+        }
+
+        visitadas.remove(tarefa);
+
+        return duracaoTotal;
+    }
+
+    public List<Tarefa> listarTarefasComDuracaoMaiorQue(int duracaoMinima) {
+        return this.tarefas
+                .values()
+                .stream()
+                .filter(t-> t.getDuracao() < duracaoMinima)
+                .toList();
+    }
+
+    public void addDependencia(String nome, Tarefa dependencia) {
+        Tarefa tarefa = this.tarefas.get(nome);
     }
 
 }

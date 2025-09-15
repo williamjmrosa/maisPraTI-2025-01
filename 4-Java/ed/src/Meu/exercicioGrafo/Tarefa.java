@@ -19,10 +19,9 @@ public class Tarefa {
     private int duracao;
     private List<Tarefa> dependencias;
 
-    public Tarefa(String nome, int duracao, List<Tarefa> dependencias) {
+    public Tarefa(String nome, int duracao) {
         this.nome = nome;
         this.duracao = duracao;
-        this.dependencias = dependencias;
     }
 
     public String getNome() {

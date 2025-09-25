@@ -16,7 +16,7 @@ public class AppConfig {
 }
 
 @Service
-class Greeter() {
+class Greeter {
     private final String prefixo;
     Greeter(String prefixo) {
         this.prefixo = prefixo;
@@ -26,7 +26,7 @@ class Greeter() {
 }
 
 @Component
-Class MusicBox {
+class MusicBox {
     @PostConstruct void init() {
         System.out.println("Iniciando MusicBox");
     }

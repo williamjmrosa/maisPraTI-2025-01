@@ -4,3 +4,34 @@ tempCodeRunnerFile.js
 maisPraTI.code-workspace
 .DS_Store
 3-Reactjs/6-desafio/.env
+
+### IntelliJ IDEA ###
+out/
+.idea
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store

@@ -7,13 +7,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Configuration
-public class AppConfig {
-    @Bean
-    public String prefixo(){
-        return ">>>";
-    }
-}
+//@Configuration
+//public class AppConfig {
+//    @Bean
+//    public String prefixo(){
+//        return ">>>";
+//    }
+//}
 
 //@Service
 //class Greeter(){
@@ -26,14 +26,14 @@ public class AppConfig {
 //        return prefixo + nome;}
 //}
 
-@Component
-class MusicBox {
-
-    @PostConstruct void init() {
-        System.out.println("Iniciando MusicBox");
-    }
-
-    @PreDestroy void close() {
-        System.out.println("Finalizando MusicBox");
-    }
-}
+//@Component
+//class MusicBox {
+//
+//    @PostConstruct void init() {
+//        System.out.println("Iniciando MusicBox");
+//    }
+//
+//    @PreDestroy void close() {
+//        System.out.println("Finalizando MusicBox");
+//    }
+//}

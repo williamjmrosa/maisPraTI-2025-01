@@ -1,27 +1,21 @@
-package com.example.jpa_hibernate_example_meu.model;
+package model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.math.BigDecimal;
 import java.util.Date;
+
 @Entity
 public class Comanda {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_comanda;
+
     private Date data;
     private int nr_mesa;
     private String nome_cliente;
-
-    public Comanda(Long id_comanda, Date data, int nr_mesa, String nome_cliente) {
-        this.id_comanda = id_comanda;
-        this.data = data;
-        this.nr_mesa = nr_mesa;
-        this.nome_cliente = nome_cliente;
-    }
 
     public Long getId_comanda() {
         return id_comanda;

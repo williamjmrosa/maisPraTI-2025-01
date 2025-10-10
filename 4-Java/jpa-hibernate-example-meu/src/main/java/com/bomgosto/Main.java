@@ -1,6 +1,8 @@
-import model.Cardapio;
-import model.Comanda;
-import model.Item_comanda;
+package com.bomgosto;
+
+import com.bomgosto.model.Cardapio;
+import com.bomgosto.model.Comanda;
+import com.bomgosto.model.Item_comanda;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

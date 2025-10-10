@@ -1,4 +1,4 @@
-package model;
+package com.bomgosto.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

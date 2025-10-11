@@ -39,12 +39,17 @@ OBS (propriedades opcionais úteis)
 
         <!-- URL JDBC apontando para o host, porta e banco de dados "cafeteria". -->
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/cafeteria</property>
+<<<<<<< HEAD:4-Java/jpa-hibernate-example/src/main/resources/hibernate.cfg.xml
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">ROOT</property>
+=======
 
         <!-- Usuário do banco de dados. Substitua por um usuário real. -->
         <property name="hibernate.connection.username">seu_usuario</property>
 
         <!-- Senha do usuário do banco. Nunca versionar senhas reais no repositório. -->
         <property name="hibernate.connection.password">sua_senha</property>
+>>>>>>> d695348282709f98943fd1813a3703c337d5cf6d:4-Java/jpa-hibernate-example/hibernate.cfg.xml
 
         <!--
           Dialeto SQL: orienta o Hibernate a gerar SQL compatível com o PostgreSQL.

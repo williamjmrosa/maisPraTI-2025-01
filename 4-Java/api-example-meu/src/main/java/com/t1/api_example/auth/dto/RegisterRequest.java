@@ -11,12 +11,12 @@ public class RegisterRequest {
     private String name;
 
     @NotBlank
-    @Size(min = 2, max = 120)
+    @Size(max = 120)
     @Email
     private String username;
 
     @NotBlank
-    @Size(min = 2, max = 120)
+    @Size(min = 8, max = 120)
     private String password;
 
     public String getName() {

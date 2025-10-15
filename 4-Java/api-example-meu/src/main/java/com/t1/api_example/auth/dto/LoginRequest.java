@@ -1,10 +1,12 @@
 package com.t1.api_example.auth.dto;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 public class LoginRequest {
 
     @NotBlank
+    @Email
     private String username;
 
     @NotBlank

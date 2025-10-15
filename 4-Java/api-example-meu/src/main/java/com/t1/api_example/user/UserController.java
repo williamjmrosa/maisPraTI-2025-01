@@ -1,5 +1,6 @@
 package com.t1.api_example.user;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +19,8 @@ public class UserController {
     }
 
     @GetMapping("/me")
-    public Map<String, Object> me(Principal principal){
-        var user = userRepository.findByUsername(principal.getName()).orElseThrow();
+    public Map<String, Object> me(@AuthenticationPrincipal User u){
+        var user = userRepository.findByUsername(u.getUsername()).orElseThrow();
 
         return Map.of(
                 "id", user.getId(),

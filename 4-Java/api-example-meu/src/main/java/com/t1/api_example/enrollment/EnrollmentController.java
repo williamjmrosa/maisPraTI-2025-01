@@ -5,6 +5,7 @@ import com.t1.api_example.course.CourseRepository;
 import com.t1.api_example.enrollment.dto.EnrollmentRequest;
 import com.t1.api_example.user.User;
 import com.t1.api_example.user.UserRepository;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@Tag(name = "Enrollments")
 @RequestMapping("/enrollments")
 public class EnrollmentController {
 

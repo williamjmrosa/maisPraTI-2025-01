@@ -15,6 +15,12 @@ public interface EnrollmentRepository extends JpaRepository<Enrollment, Long> {
     List<Enrollment> findByUser(User user);
     List<Enrollment> findByCourse(Course course);
 
-    @Query("SELECT e FROM Enrollment e WHERE e.id = :idCourse")
+    @Query(value = "SELECT * FROM enrollments e WHERE e.id = :idCourse", nativeQuery = true)
     List<Enrollment> listarAlunosMatriculados(@Param("idCourse") Long idCourse);
+
+    @Query(value = "SELECT e.user_id FROM enrollments e WHERE e.course_id = :courseId ORDER BY e.enrolled_at ASC", nativeQuery = true)
+    List<Long> findUserIdsByCourseNative(@Param("courseId") Long courseId);
+
+    @Query(value = "SELECT COUNT(*) FROM enrollments e WHERE e.course_id = :courseId", nativeQuery = true)
+    long countByCourseIdNative(@Param("courseId") Long courseId);
 }

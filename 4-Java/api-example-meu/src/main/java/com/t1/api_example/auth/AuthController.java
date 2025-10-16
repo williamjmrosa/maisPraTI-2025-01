@@ -6,6 +6,7 @@ import com.t1.api_example.auth.dto.RegisterRequest;
 import com.t1.api_example.security.JwtService;
 import com.t1.api_example.user.User;
 import com.t1.api_example.user.UserRepository;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@Tag(name = "Authentication")
 @RequestMapping("/auth")
 public class AuthController {
 

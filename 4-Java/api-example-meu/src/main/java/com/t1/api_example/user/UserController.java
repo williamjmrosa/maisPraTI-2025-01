@@ -1,5 +1,6 @@
 package com.t1.api_example.user;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +10,7 @@ import java.security.Principal;
 import java.util.Map;
 
 @RestController
+@Tag(name = "Users")
 @RequestMapping("/users")
 public class UserController {
 

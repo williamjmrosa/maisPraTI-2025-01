@@ -12,10 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -65,7 +62,7 @@ public class AuthController {
         var username = request.getUsername();
         var userOpt = userRepository.findByUsername(username);
 
-        if(userOpt.isEmpty() || !passwordEncoder.matches(request.getPassword(), userOpt.get().getPassword())){
+        if(userOpt.isEmpty() || userOpt.get().getPassword() == null || !passwordEncoder.matches(request.getPassword(), userOpt.get().getPassword())){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
@@ -78,6 +75,13 @@ public class AuthController {
         return ResponseEntity.ok(new AuthResponse(token));
 
 
+    }
+
+    @GetMapping("/oauth2/success")
+    public ResponseEntity<AuthResponse> oauth2Success(@RequestParam String token){
+        // Este endpoint é o destino do redirecionamento após o login OAuth2 bem-sucedido.
+        // Ele pega o token da URL e retorna no formato JSON esperado.
+        return ResponseEntity.ok(new AuthResponse(token));
     }
 
 }

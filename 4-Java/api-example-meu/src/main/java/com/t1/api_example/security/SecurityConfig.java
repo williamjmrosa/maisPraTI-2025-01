@@ -17,6 +17,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
 @EnableMethodSecurity
@@ -24,10 +25,12 @@ public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final UserRepository userRepository;
+    private final OAuth2LoginSuccessHandler oauth2LoginSuccessHandler;
 
-    public SecurityConfig(JwtAuthenticationFilter jwtAuthenticationFilter, UserRepository userRepository) {
+    public SecurityConfig(JwtAuthenticationFilter jwtAuthenticationFilter, UserRepository userRepository,OAuth2LoginSuccessHandler oauth2LoginSuccessHandler) {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
         this.userRepository = userRepository;
+        this.oauth2LoginSuccessHandler = oauth2LoginSuccessHandler;
     }
 
     @Bean
@@ -40,7 +43,7 @@ public class SecurityConfig {
         return username -> userRepository.findByUsername(username)
                 .map(u-> (UserDetails) org.springframework.security.core.userdetails.User
                         .withUsername(u.getUsername())
-                        .password(u.getPassword())
+                        .password(u.getPassword() == null ? "" : u.getPassword())
                         .roles(u.getRoles().toArray(String[]::new))
                         .accountLocked(false)
                         .disabled(false)
@@ -74,6 +77,10 @@ public class SecurityConfig {
                         .requestMatchers("/courses/**").authenticated()
                         .requestMatchers("/enrollments/**").authenticated()
                         .anyRequest().authenticated()
+                )
+                .oauth2Login(oauth2 -> oauth2
+                        .successHandler(oauth2LoginSuccessHandler)
+                        .failureUrl("/login?oauth2_error")
                 )
                 .authenticationProvider(authenticationProvider(userDetailsService(), passwordEncoder()))
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

@@ -28,8 +28,8 @@ public class User {
     @Email
     private String username;
 
-    @NotBlank
-    @Size(min = 60, max = 100)
+    //@NotBlank
+    //@Size(min = 60, max = 100)
     private String password;
 
     @ElementCollection(fetch = FetchType.EAGER)

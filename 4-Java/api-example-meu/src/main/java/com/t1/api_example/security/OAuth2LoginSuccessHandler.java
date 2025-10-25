@@ -71,8 +71,8 @@ public class OAuth2LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHan
                 "roles", user.getRoles()
         );
         String token = jwtService.generateToken(user.getUsername(), claims);
-        String redirectUrl = "/auth/oauth2/success?token=" + token;
-
+        //String redirectUrl = "/auth/oauth2/success?token=" + token;
+        String redirectUrl = "http://localhost:5173/auth/callback?token=" + token;
         getRedirectStrategy().sendRedirect(request, response, redirectUrl);
     }
 

@@ -35,4 +35,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+.venv
 4-Java/jpa-hibernate-example-meu/target/classes/hibernate.cfg.xml

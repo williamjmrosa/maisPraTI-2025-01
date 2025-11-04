@@ -1,0 +1,7 @@
+!pip install wget
+#baixando os dados sobre vinho tinto
+!python -m wget -o winequality-red.csv "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
+#baixando os dados sobre vinho branco
+!python -m wget -o winequality-white.csv "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv"
+#Baixando o arquivo que descreve o nome das colunas
+!python -m wget -o winequality.names "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality.names"

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão OpenAI</title>
+    <style>
+        body {
+            margin: 0;
+            color: #e6e6ee;
+            background-color: #0b1020;
+        }
+
+        header {
+            padding: 12px 16px;
+            background-color: #111634;
+            position: sticky;
+            top: 0;
+            border-bottom: #ffffff 1px solid;
+        }
+        
+
+        header h1 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        #composer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #343a61;
+            border-top: #ffffff 1px solid;
+            padding: 10px 12px;
+        }
+
+        #input {
+            width: 100%;
+            max-width: 800px;
+            margin: 0;
+            display: flex;
+            gap: 8px;
+        }
+
+        textarea {
+            flex: 1;
+            resize: vertical;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid black;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conexão OpenAI</h1>
+    </header>
+    <main id="chat">    
+        <div id="composer">
+            <div id="input">
+                <textarea id="text" placeholder="Digite sua mensagem"></textarea>
+                <button id="send">Enviar</button>
+            </div>
+        </div>
+    
+    </main>
+
+    <script>
+        const chat = document.getElementById('chat');
+        const text = document.getElementById('text');
+        const send = document.getElementById('send');
+
+        let history = [];
+
+        async function callChat(message) {
+            const payload = { message, history }
+            send.disabled = true
+            try {
+                const res = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                })
+
+                const data = await res.json()
+            }catch (error) {
+                console.error(error)
+            } finally {
+                send.disabled = false
+            }
+        }
+    </script>
+</body>
+</html>
